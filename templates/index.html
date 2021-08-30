@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Concrete Strength Prediction</title>
+</head>
+<body>
+	<div class='1'><h1>Concrete Strength Prediction</h1></div>
+
+	<div class='inputs'>
+		<form action="{{ url_for('predict') }}" method="POST">
+			<label for='cement'>Cement:</label>
+	        <input name="cement" placeholder="in KG" required="required">
+	        <br><br><br>
+
+	        <label for='cement'>Slag:</label>
+	        <input name="slag" placeholder="in KG" required="required">
+	        <br><br><br>
+
+	        <label for='cement'>Ash:</label>
+	        <input name="ash" placeholder="in KG" required="required">
+	        <br><br><br>
+
+	        <label for='cement'>Water:</label>
+	        <input name="water" placeholder="in Litres" required="required">
+	        <br><br><br>
+
+	        <label for='cement'>Superplastic:</label>
+	        <input name="superplastic" placeholder="in KG" required="required">
+			<br><br><br>
+
+	        <label for='cement'>Coarseagg:</label>
+	        <input name="coarseagg" placeholder="in KG" required="required">
+	        <br><br><br>
+
+			<label for='cement'>Fineagg:</label>
+	        <input name="fineagg" placeholder="in KG" required="required">
+	        <br><br><br>
+
+	        <label for='cement'>Age:</label>
+	        <input name="age" placeholder="in Year" required="required">
+	        <br>
+	        <br>
+	        <br>
+	        <input type="submit" name="Submit" id='sub'>
+        </form>
+    </div>
+
+         <h1>The concrete strength based on the above provided values is: {{prediction}}</h1>
+
+
+     	<div id='right'>
+			<p> 
+			     			*Description of all the variables in the dataset *
+			Note : As we do not have the domain knowledge, hence done some research on this topic and tried to understand the concepts and then written as per my knowledge.
+			<br>
+
+			-------All the ingredients are measured in kg in m3 mixture and strength is measured in MPa-------
+
+			-> cement :
+			Cement is actually an ingredient of concrete.It is a water-based binder used to bind other building materials together. It is used in the production of mortar(paste) and concrete during the construction process.
+			<br>
+			-> slag :
+			Slag is often used in concrete in combination with cement, it is also used in steel making process but mostly used in construction.
+			<br>
+			-> ash :
+			Ash acts like a cement and a right receipe of concrete and it improves the strength of concrete. It is also replace of cement.
+			<br>
+			-> water :
+			Water is the key ingredient, which when mixed with cement, forms a paste that binds the aggregate together. The water causes the hardening of concrete through a process called hydration. The role of water is important because the water to cement ratio is the most critical factor in the production of "perfect" concrete.
+			<br>
+			-> superplasticizer :
+			It is also known as high range water reducers, are additives used in making high strength concrete. They are the chemical compounds that enables the production of concrete with approx 15% less water content. In other words it allows reduction in water content.
+			<br>
+			-> coarse aggregate :
+			Generally coarse aggregate is crushed stones blended with finer aggregates (such as sand) to fill in the spaces left between the large pieces and to “lock” the larger pieces together. This reduces the amount of cement paste required and decreases the amount of shrinkage that could occur.
+			<br>
+			-> fine aggregate :
+			As mentioned in the previous variable 'fine aggregates' includes natural sand, crushed stones, gravel used in construction. Aggregates plays in the properties of both fresh and hardened concrete. The proportions between coarse and fine aggregates will change based on the unique characteristics of each aggregate.
+			<br>
+			-> age :
+			This variable represents the age of the concrete, is the time elapsed since it was poured in place and left to set. We can say that concrete strength increases over time
+			<br>
+			-> strength :
+			Last but not the least. It is our dependent/output variable which we want to predict under a given mixture of all above independent variables or we can say 'Ingredients'. It defines the strength of the concrete measured in MPa, it lets inspectors know how much pressure can be applied to the concrete before it cracks or fails.
+
+	</p>
+	</div>
+
+    <style>
+
+        body{
+        	background-image: url("../static/image1.png");
+        	height: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: 100%;
+
+			font-family: Arial, Helvetica,sans-serif;
+		    color: #bdb62d;
+        }
+
+        input{
+            border-radius: 14px;
+            height: 30px;
+            width: 150px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+
+        #sub{
+            width: 150px;
+            height: 35px;
+            text-align: center;
+            font-size: 22px;
+            margin-left: 160px;
+            background-color: red;
+            color: white;
+        }
+
+        label{
+        	width:  150px;
+        	display: inline-block;
+            font-size: 26px;
+            text-align :right;
+        }
+
+        #right{
+        	position: right;
+		  	width: 50%;
+		  	float: right;
+		  	height: 100%;
+		  	background-color: whitesmoke;
+        }
+
+    </style>
+
+</body>
+</html>
